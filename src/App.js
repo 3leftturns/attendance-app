@@ -1,26 +1,32 @@
 import React from 'react';
+import {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Today from './Today.js';
 
-function App() {
-  return (
+class App extends Component {
+  constructor (props) {
+    super(props)
+  }
+
+  submitData = (event) => {
+    
+  }
+
+  render() {
+   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>Domo Dev Meetup</p>
+    <label>
+    <Today />
+    Name:
+      <input type="text" name="name" />
+      </label>
+
+      <button onClick={this.submitData} foo="bar"> Submit</button>
     </div>
   );
+}
 }
 
 export default App;
